@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alegreya+SC&family=Alegreya+Sans+SC:wght@300;400&family=Anton&family=Barlow:wght@300&family=Bebas+Neue&family=Cormorant+SC:wght@300;400;500;600;700&family=Cuprum:wght@400;500&family=Goldman:wght@400;700&family=Josefin+Slab:wght@300;400;600&family=Kanit:wght@500&family=Lato:wght@300;400;700&family=Lobster&family=Philosopher:wght@400;700&family=Poppins:wght@200;300;400;500;600&family=Secular+One&family=Teko:wght@300;400;500&family=Unna:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Calculator</title>
+</head>
+
+<body>
+    <div class="panel">
+        <div class="bar">Previous 5 calculation history
+            <span class="closed" title="close window">
+                <ion-icon name="close-outline" title="close window"></ion-icon>
+            </span>
+        </div>
+        <div class="hist" id="hist1">No calculations made</div>
+        <div class="hist" id="hist2">No calculations made</div>
+        <div class="hist" id="hist3">No calculations made</div>
+        <div class="hist" id="hist4">No calculations made</div>
+        <div class="hist" id="hist5">No calculations made</div>
+    </div>
+
+    <div class="container" name="container">
+        <div class="textarea" name="txt">
+            <div class="question" name="question" style="transform: scale(1); "></div>
+            <div class="answer" name="answer" style="transform: scale(1);"></div>
+        </div>
+        <div class="icont"><span class="darklight" title="toggle dark mode" onclick="fav(this)" spellcheck="false">
+                <ion-icon name="moon-outline" title="Toggle dark mode"></ion-icon>
+            </span>
+            <span class="scinorm" title="toggle scientific calculator" onclick="fav1(this)">
+                <ion-icon name="school-outline" title="toggle scientific calculator"></ion-icon>
+            </span>
+            <span class="history" title="recent calculations" spellcheck="false">
+                <ion-icon name="time-outline" title="view recent calculations"></ion-icon>
+            </span>
+        </div>
+        <div class="btncont2">
+            <div class="scicont">
+                <span class="modebtn">
+                    <div class="md1"><span class="md">MODE</span></div>
+                    <div class="drp">
+                        <ul>
+                            <li><span class="drpspan" onclick="updateName(this)">NORM</span></li>
+                        </ul>
+                        <ul>
+                            <li><span class="drpspan" onclick="updateName(this)">SCI</span></li>
+                        </ul>
+                        <ul>
+                            <li><span class="drpspan" onclick="updateName(this)">STAT</span></li>
+                        </ul></div></span>
+                <span>&larr;</span>
+                <span>&rarr;</span>
+                <span class="eq">Alpha</span>
+                <span class="sqr">X&sup2;</span>
+                <span class="power">X^</span>
+                <span class="tenpower">10^</span>
+                <span class="epower">e^</span>
+                <span class="fact">X!</span>
+                <span class="sqrt">&Sqrt;</span>
+                <span class="cbrt">&#x221B;</span>
+                <span class="sin">Sin</span>
+                <span class="cos">Cos</span>
+                <span class="tan">Tan</span>
+                <span class="int">&int;dx</span>
+                <span class="ln">Ln</span>
+                <span class="log2">Log</span>
+                <span class="btn14">(</span>
+                <span class="btn15" onclick="document.querySelector('.question').textContent +=')'">)</span>
+                <span class="second" onclick="fav4(this)">
+                    <ion-icon name="duplicate-sharp"></ion-icon>
+                </span>
+
+            </div>
+        </div>
+
+        <div class="btncont">
+            <div class="normalcont">
+                <span class="c">C</span>
+                <span class="redbtn" onclick="document.querySelector('.question').textContent = textelem()">DEL</span>
+                <span class="op">%</span>
+                <span class="op" id="d">&divide;</span>
+                <span onclick="document.querySelector('.question').textContent +='7'">7</span>
+                <span onclick="document.querySelector('.question').textContent +='8'">8</span>
+                <span onclick="document.querySelector('.question').textContent +='9'">9</span>
+                <span class="op" id="m">&times;</span>
+                <span onclick="document.querySelector('.question').textContent +='4'">4</span>
+                <span onclick="document.querySelector('.question').textContent +='5'">5</span>
+                <span onclick="document.querySelector('.question').textContent +='6'">6</span>
+                <span class="op">-</span>
+                <span onclick="document.querySelector('.question').textContent +='1'">1</span>
+                <span onclick="document.querySelector('.question').textContent +='2'">2</span>
+                <span onclick="document.querySelector('.question').textContent +='3'">3</span>
+                <span class="op">+</span>
+                <span onclick="document.querySelector('.question').textContent +='0'">0</span>
+                <span onclick="document.querySelector('.question').textContent +='00'">00</span>
+                <span onclick="document.querySelector('.question').textContent +='.'">.</span>
+                <span class="eq" onclick="equalfunction()">=</span>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="app.js"></script>
+    <script src="http://nerdamer.com/js/nerdamer.core.js"></script>
+    <script src="http://nerdamer.com/js/Algebra.js"></script>
+    <script src="http://nerdamer.com/js/Calculus.js"></script>
+</body>
+
+</html>
